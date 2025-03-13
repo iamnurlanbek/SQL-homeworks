@@ -168,7 +168,7 @@ INSERT INTO Sizes VALUES
 Select C.ColorName, S.SizeName
 from Colors as C 
 cross join Sizes as S 
-where C.ColorID = S.SizeID
+
 
 --Task 7: Join with WHERE Clause
 --Question: Find all movies released after 2015 and their associated actors.
@@ -275,9 +275,8 @@ INSERT INTO Products VALUES
 Select * from Sales
 Select * from Products
 
-Select P.Productname, Sum(S.Quantity) as TotalRevenue 
+Select P.Productname, Sum(S.Quantity * P.Price) as TotalRevenue 
 from Sales as S 
 inner join Products as P 
 on S.ProductID = P.ProductID 
-
 group by  P.Productname
